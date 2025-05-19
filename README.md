@@ -1,6 +1,6 @@
 # FlyWithDsc - Flight Deal Finder with a Discord Bot
 
-FlyWithDsc is a work-in-progress project પાણી to create a Python tool for finding and analyzing flight prices from airlines (initially Ryanair and Wizzair) and sharing this information via a Discord bot.
+FlyWithDsc is a work-in-progress project to create a Python tool for finding and analyzing flight prices from airlines (initially Ryanair and Wizzair) and sharing this information via a Discord bot.
 
 ## Main Project Goals
 
