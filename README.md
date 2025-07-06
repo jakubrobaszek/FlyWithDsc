@@ -21,19 +21,19 @@ Currently implemented/in progress:
 
 **Next Steps:**
 *   Full implementation of the `database.py` module for saving and retrieving data.
-*   Development of the `scraper.py` module to fetch flight data (initially for Ryanair, assuming a suitable JSON API can be found).
+*   Development of the `scraper.py` module to fetch flight data (initially for Ryanair).
 *   Implementation of the `analyzer.py` module for data analysis.
 *   Building the Discord bot logic in `bot.py`.
 
-## Tech Stack (Planned)
+## Tech Stack
 
-*   **Language:** Python 3.9+
+*   **Language:** Python3
 *   **Web Scraping / API Interaction:** `requests` (for JSON APIs)
 *   **Database:** `SQLite3` (built-in `sqlite3` module)
-*   **Data Analysis:** `Pandas`, `NumPy`
-*   **Discord Bot:** `discord.py` (or an active fork like `nextcord`, `disnake`)
+*   **(Planned) Data Analysis:** `Pandas`, `NumPy`
+*   **Discord Bot:** `discord.py`
 *   **Configuration:** `python-dotenv` (for `.env` files)
-*   **Version Control:** `Git`, `GitHub`
+*   **Version Control:** `Git`, `GitHub`, `GitLab`
 *   **Virtual Environment:** `venv`
 *   **(Planned) Testing:** `pytest`
 *   **(Planned) Code Formatting/Linting:** `Black`, `Flake8`/`Ruff`
@@ -44,14 +44,13 @@ Currently implemented/in progress:
 *   `pip` (Python package manager)
 *   `Git` (optional, if cloning the repository)
 
-## Installation and Setup (Current Stage)
+## Installation and Setup
 
-1.  **Clone the repository (if it's on GitHub):**
+1.  **Clone the repository:**
     ```bash
-    git clone [URL_OF_YOUR_GITHUB_REPOSITORY]
+    git clone https://github.com/jakubrobaszek/FlyWithDsc.git
     cd FlyWithDsc
     ```
-    Or simply create the folder structure if you are working locally.
 
 2.  **Create and activate a virtual environment:**
     ```bash
@@ -63,15 +62,10 @@ Currently implemented/in progress:
     ```
 
 3.  **Install dependencies:**
-    At this stage, if a `requirements.txt` file exists and is up-to-date:
     ```bash
     pip install -r requirements.txt
     ```
-    If `requirements.txt` doesn't exist yet or is incomplete, install the necessary libraries manually (at least `python-dotenv` for now):
-    ```bash
-    pip install python-dotenv requests pandas discord.py # Add others as they are used
-    ```
-    *(Remember to update `requirements.txt` later using `pip freeze > requirements.txt`)*
+    *(Remember to update `requirements.txt` later using `pip freeze > requirements.txt` if you are trying to make a commit)*
 
 4.  **Set up environment variables:**
     *   Copy the `.env_example` file to a new file named `.env`:
@@ -91,9 +85,9 @@ Currently implemented/in progress:
     ```bash
     python main.py
     ```
-    At this point, the application will likely only initialize the configuration, attempt to create database tables (if that functionality is in `main.py` and `database.py`), and display diagnostic messages.
 
 ## Project Structure (Simplified)
+```
 FlyWithDsc/
 ├── flywithdsc/ # Main application package
 │ ├── __init__.py # Package implementation
@@ -108,10 +102,4 @@ FlyWithDsc/
 ├── main.py # Main application entry point
 ├── requirements.txt # (To be generated/updated) Dependencies
 └── README.md # This file
-## Author
-
-*   [Jakub Robaszek]
-
-## License
-
-No license yet.
+```
