@@ -13,8 +13,8 @@ if DOTENV_PATH.exists():
 else:
 	print(f"WARNING: Create .env file in {DOTENV_PATH} using '.env_example' template")
 
-DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-DATABASE_URL = os.getenv("DATABASE_URL", "flights_data.sqlite3")
+DISCORD_BOT_TOKEN: str = os.getenv("DISCORD_BOT_TOKEN")
+DATABASE_URL: str = os.getenv("DATABASE_URL", "flights_data.sqlite3")
 
 # Checking if discord bot token was loaded
 if not DISCORD_BOT_TOKEN:
