@@ -73,11 +73,11 @@ Currently implemented/in progress:
         cp .env_example .env  # Linux/macOS
         # copy .env_example .env  # Windows
         ```
-    *   Open the `.env` file in a text editor and fill in the required values, especially `DISCORD_BOT_TOKEN` and `DATABASE_URL` (e.g., `DATABASE_URL="flights_data.sqlite3"`).
+    *   Open the `.env` file in a text editor and fill in the required values, especially `DISCORD_BOT_TOKEN` and `DATABASE_URL` (e.g., `DATABASE_URL="flights_data.db"`).
         ```ini
         # Example .env content
         DISCORD_BOT_TOKEN="YOUR_ACTUAL_DISCORD_BOT_TOKEN_HERE"
-        DATABASE_URL="flights_data.sqlite3"
+        DATABASE_URL="flights_data.db"
         ```
 
 5.  **Run the application (at the current stage):**
