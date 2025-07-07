@@ -20,21 +20,18 @@ def run_application():
 		print("Discord token was not properly loaded check your .env file")
 		return
 	
-	from flywithdsc import database
+	from flywithdsc import bot
+	bot.client.run(config.DISCORD_BOT_TOKEN)
+	
+	# Import and initialize database and scraper
+	from flywithdsc import database, scraper
 	database.initialize_database(config.DATABASE_URL)
 
-	from datetime import datetime
-	database.save_flight(
-		config.DATABASE_URL, 
-		(
-			str(datetime.now())[:19], # download_date
-			'Ryanair', # airline
-			'JFK', # from_airport
-			'WMI', # to_airport
-			'2025-07-08 10:00:00', # from_date
-			'2025-07-08 18:30:00', # to_date
-			890.50 # price
-		))
+	# Scrape flights and save them to database
+	download = scraper.scrape_flights('LCJ', 'AGP')
+	dwnl_count = int(len(download) / 7)
+	for x in range(1, dwnl_count+1):
+		database.save_flight(config.DATABASE_URL, download[(x-1)*7:x*7])
 
 # Checks if the application was launched directly and was not imported as module
 if __name__ == "__main__":
