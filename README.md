@@ -92,7 +92,7 @@ FlyWithDsc/
 ├── flywithdsc/ # Main application package
 │ ├── __init__.py # Package implementation
 │ ├── config.py # Configuration
-│ ├── database.py # (To be done) Database handling
+│ ├── database.py # Database handling
 │ ├── scraper.py # (To be done) Data scraping
 │ ├── analyzer.py # (To be done) Data analysis
 │ └── bot.py # (To be done) Discord bot logic
