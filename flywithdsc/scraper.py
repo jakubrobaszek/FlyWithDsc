@@ -34,13 +34,14 @@ def scrape_flights(departureCode: str, arrivalCode: str) -> tuple:
             #     datetime.strptime(outbound['arrivalDate'], "%Y-%m-%dT%H:%M:%S"),
             #     outbound['price']['value']
             # ))
+            curCode = outbound['price']['currencyCode']
             flights.append(str(datetime.fromtimestamp(int(outbound['priceUpdated']) / 1000))[:19])
             flights.append("Ryanair")
             flights.append(departureCode)
             flights.append(arrivalCode)
             flights.append(str(datetime.strptime(outbound['departureDate'], "%Y-%m-%dT%H:%M:%S")))
             flights.append(str(datetime.strptime(outbound['arrivalDate'], "%Y-%m-%dT%H:%M:%S")))
-            flights.append(outbound['price']['value'])
+            flights.append(outbound['price']['value'] if curCode == 'PLN' else outbound['price']['value'] * 4)
             
             #download_date, airline, from_airport, to_airport, from_date, to_date, price
             # print(f'-----{outbound['flightNumber']}-----')
