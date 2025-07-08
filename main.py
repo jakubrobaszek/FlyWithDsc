@@ -20,18 +20,9 @@ def run_application():
 		print("Discord token was not properly loaded check your .env file")
 		return
 	
+	# Runs the bot
 	from flywithdsc import bot
 	bot.client.run(config.DISCORD_BOT_TOKEN)
-	
-	# Import and initialize database and scraper
-	from flywithdsc import database, scraper
-	database.initialize_database(config.DATABASE_URL)
-
-	# Scrape flights and save them to database
-	download = scraper.scrape_flights('LCJ', 'AGP')
-	dwnl_count = int(len(download) / 7)
-	for x in range(1, dwnl_count+1):
-		database.save_flight(config.DATABASE_URL, download[(x-1)*7:x*7])
 
 # Checks if the application was launched directly and was not imported as module
 if __name__ == "__main__":
